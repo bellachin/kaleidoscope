@@ -1,0 +1,45 @@
+/* Kaleidoscope design tokens — see docs/BRAND_BOOK.md */
+:root {
+  /* Brand palette */
+  --color-white: #ffffff;
+  --color-navy: #0f4f7a; /* Outer gear */
+  --color-deep-teal: #2f7fa3; /* Second layer */
+  --color-teal: #4fa3b8; /* Middle hex */
+  --color-light-teal: #79c2cf; /* Inner hex */
+  --color-cyan: #a9d6de; /* Center aperture */
+
+  /* Semantic roles */
+  --color-bg: var(--color-white);
+  --color-surface: var(--color-cyan);
+  --color-text: var(--color-navy);
+  --color-text-inverse: var(--color-white);
+  --color-primary: var(--color-navy);
+  --color-primary-hover: var(--color-deep-teal);
+  --color-accent: var(--color-teal);
+  --color-accent-soft: var(--color-light-teal);
+  --color-focus: var(--color-deep-teal);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Shape */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+}
