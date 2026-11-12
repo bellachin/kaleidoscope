@@ -1,0 +1,165 @@
+.upcoming {
+  position: relative;
+  z-index: 1;
+  /* clip top and sides, but let the bottom-right hex cluster spill over the bottom edge */
+  clip-path: inset(0 0 -100vh 0);
+  border-top: 3px solid var(--color-gold);
+  background: var(--color-sky-bg) url('@/assets/events/wave-lines.png') no-repeat left bottom / 100%
+    auto;
+}
+
+.upcoming__hex {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Top watermark: anchored to the full-width section so it scales with the viewport */
+.upcoming__hex--top {
+  top: -3%;
+  left: 37%;
+  width: clamp(120px, 17vw, 300px);
+}
+
+.upcoming__inner {
+  --mark-w: clamp(48px, 11vw, 120px);
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    'text'
+    'media'
+    'action';
+  gap: var(--space-8);
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-4) var(--space-16);
+}
+
+.upcoming__text {
+  grid-area: text;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.upcoming__copy {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Bottom-right: bold icon + light hex as one unit, straddling the section's bottom edge */
+.upcoming__corner {
+  position: absolute;
+  right: 3%;
+  bottom: 0;
+  width: clamp(56px, 10vw, 170px);
+  transform: translateY(70%);
+}
+.upcoming__corner .upcoming__hex--corner {
+  top: -88%;
+  left: -40%;
+  width: 169%;
+}
+
+/* Top-left: icon + its lighter watermark hex move together as one unit */
+.upcoming__mark {
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--mark-w);
+  margin-top: 0.25rem;
+}
+
+.upcoming__mark .upcoming__hex--1 {
+  top: -90%;
+  left: -25%;
+  width: 175%;
+}
+
+.upcoming__icon {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.upcoming__title {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-blue-heading);
+}
+
+.upcoming__description {
+  max-width: 34rem;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #000;
+}
+
+.upcoming__action {
+  grid-area: action;
+}
+
+.upcoming__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  border: 0;
+  cursor: pointer;
+  font-size: var(--text-base);
+  border-radius: var(--radius-sm);
+  background: var(--color-blue-heading);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  text-decoration: none;
+}
+.upcoming__cta:hover {
+  filter: brightness(1.1);
+}
+
+.upcoming__media {
+  grid-area: media;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+/* iPad portrait and up: icon sits beside the heading */
+@media (min-width: 768px) {
+  .upcoming__inner {
+    padding: var(--space-16) var(--space-8);
+  }
+}
+
+/* Laptop / iPad landscape and up: two columns */
+@media (min-width: 1024px) {
+  .upcoming__inner {
+    padding-inline: 3.5vw 8vw;
+    grid-template-areas:
+      'text media'
+      'action media';
+    grid-template-columns: 1fr 1.15fr;
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 0 var(--space-12);
+  }
+  .upcoming__text {
+    align-self: end;
+    padding-bottom: var(--space-8);
+  }
+  .upcoming__action {
+    align-self: start;
+    padding-left: calc(var(--mark-w) + var(--space-2));
+  }
+  .upcoming__media {
+    align-self: center;
+    grid-row: 1 / span 2;
+  }
+}
