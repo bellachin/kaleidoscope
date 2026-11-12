@@ -3,7 +3,6 @@
   z-index: 1;
   /* clip top and sides, but let the bottom-right hex cluster spill over the bottom edge */
   clip-path: inset(0 0 -100vh 0);
-  border-top: 3px solid var(--color-gold);
   background: var(--color-sky-bg) url('@/assets/events/wave-lines.png') no-repeat left bottom / 100%
     auto;
 }

@@ -1,0 +1,23 @@
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75em 1.25em;
+  border-radius: var(--radius-sm);
+  background: var(--color-heading);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+
+.cta-link:hover {
+  background: color-mix(in oklab, var(--color-heading) 82%, black);
+}
+
+.cta-link__arrow {
+  flex-shrink: 0;
+}

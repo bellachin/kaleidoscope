@@ -1,7 +1,261 @@
 .footer {
   margin-top: auto;
-  padding: var(--space-8);
+  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2rem, 5vw, 3.25rem);
+  background: #a7cefc;
+  color: var(--color-brand-blue);
+  font-family: var(--font-brand);
+  font-size: 1.125rem; /* 18px: all body text */
+  font-weight: 400;
+}
+
+.footer__inner {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 8vw, 8.5rem);
+  align-items: start;
+}
+
+/* "Kaleidoscope" wordmark: 32px */
+.footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-brand-blue);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.footer__brand-logo {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+/* "Join Us": 34px */
+.footer__title {
+  margin: var(--space-8) 0 var(--space-2);
+  color: var(--color-brand-blue);
+  font-size: 2.125rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.footer__description {
+  margin: 0;
+  max-width: 36ch;
+  color: var(--color-brand-blue);
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.footer__form {
+  margin-top: var(--space-8);
+  max-width: 640px;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.footer__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.footer__input {
+  flex: 1;
+  min-width: 200px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--color-white);
+  color: var(--color-brand-blue);
+  padding: 0.8rem 1rem;
+  font: inherit;
+  line-height: 1.2;
+}
+
+.footer__input::placeholder {
+  color: var(--color-brand-blue);
+  opacity: 1; /* Firefox dims placeholders by default */
+}
+
+.footer__button {
+  border: 0;
+  border-radius: 12px;
   background: var(--color-primary);
-  color: var(--color-text-inverse);
-  text-align: center;
+  color: var(--color-white);
+  padding: 0.8rem 1.6rem;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.footer__links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 5rem);
+  padding-top: 0.4rem;
+}
+
+.footer__link-heading {
+  margin: 0;
+  color: var(--color-brand-blue);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.footer__links-list {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.05rem;
+}
+
+.footer__link {
+  color: var(--color-brand-blue);
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+.footer__link:hover {
+  color: var(--color-deep-teal);
+}
+
+.footer__divider {
+  height: 1px;
+  background: color-mix(in oklab, var(--color-primary) 46%, white);
+  margin: clamp(2.3rem, 5vw, 3.25rem) 0 var(--space-4);
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.footer__legal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9rem clamp(1.1rem, 2.2vw, 2.5rem);
+}
+
+.footer__lang {
+  border: 0;
+  background: transparent;
+  color: var(--color-brand-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font: inherit;
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.footer__chev {
+  font-size: 0.85em;
+  transform: translateY(-0.02em);
+}
+
+.footer__legal-link,
+.footer__copyright {
+  color: var(--color-brand-blue);
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+.footer__legal-link:hover {
+  color: var(--color-deep-teal);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.footer__social {
+  color: var(--color-brand-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__icon {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+@media (max-width: 1024px) {
+  .footer__top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer__brand-col {
+    max-width: 42rem;
+  }
+
+  .footer__description {
+    max-width: 44ch;
+  }
+}
+
+@media (max-width: 760px) {
+  .footer {
+    padding: 2.3rem 0 1.8rem;
+  }
+
+  .footer__inner {
+    width: min(1180px, calc(100% - 1.5rem));
+  }
+
+  /* Only the two display sizes step down on phones; body text stays 18px. */
+  .footer__brand {
+    font-size: 1.75rem;
+  }
+
+  .footer__title {
+    font-size: 1.875rem;
+  }
+
+  .footer__form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .footer__button {
+    width: fit-content;
+    min-width: 8.5rem;
+  }
+
+  .footer__links-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .footer__socials {
+    gap: 1rem;
+  }
 }

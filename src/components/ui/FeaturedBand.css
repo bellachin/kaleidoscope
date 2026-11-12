@@ -1,0 +1,10 @@
+.band {
+  min-height: clamp(12rem, 45.7vw, 55rem); /* about 880px tall at 1920 */
+  background: var(--color-sky-bg);
+  font-family: var(--font-heading);
+}
+
+.band__inner {
+  width: calc(100% - 2 * clamp(1.25rem, 10vw, 12rem));
+  margin: 0 auto;
+}

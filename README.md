@@ -82,6 +82,13 @@ Full guidance in [docs/BRAND_BOOK.md](docs/BRAND_BOOK.md).
 
 Tokens are defined in `src/styles/tokens.css` as CSS variables.
 
+## UI Standards
+
+- Header and footer typography standard: `Montserrat`, `18px` (`1.125rem`).
+- Most headings should use `#326FAB` (token: `--color-heading`).
+
+These are implemented in `src/components/layout/Header.css`, `src/components/layout/Footer.css`, and `src/styles/global.css`.
+
 ## Sanity CMS
 
 See [sanity/README.md](sanity/README.md) for setup steps. Environment variables: `VITE_SANITY_PROJECT_ID`, `VITE_SANITY_DATASET`.
