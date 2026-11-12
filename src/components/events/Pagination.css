@@ -1,0 +1,71 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination__dot {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-sky-dot);
+  cursor: pointer;
+  transition:
+    width 0.35s ease,
+    height 0.35s ease;
+}
+.pagination__dot:hover {
+  background: var(--color-sky-dot-active);
+}
+
+.pagination__dot--active {
+  width: 44px;
+  height: 14px;
+}
+.pagination__dot--md {
+  width: 14px;
+  height: 14px;
+}
+.pagination__dot--sm {
+  width: 10px;
+  height: 10px;
+}
+.pagination__dot--xs {
+  width: 7px;
+  height: 7px;
+}
+
+/* Active pill: filled half by default, or a progress bar when autoplaying */
+.pagination__dot--active::after {
+  content: '';
+  position: absolute;
+  inset: 0 50% 0 0;
+  border-radius: inherit;
+  background: var(--color-sky-dot-active);
+}
+.pagination[style*='--interval'] .pagination__dot--active::after {
+  inset: 0;
+  width: 0;
+  animation: pagination-fill var(--interval) linear forwards;
+}
+.pagination--paused .pagination__dot--active::after {
+  animation-play-state: paused;
+}
+
+@keyframes pagination-fill {
+  to {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagination__dot {
+    transition: none;
+  }
+  .pagination[style*='--interval'] .pagination__dot--active::after {
+    animation: none;
+    width: 50%;
+  }
+}
