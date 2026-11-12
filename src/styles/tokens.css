@@ -8,6 +8,15 @@
   --color-light-teal: #79c2cf; /* Inner hex */
   --color-cyan: #a9d6de; /* Center aperture */
 
+  /* Events section blues (from Figma; approximated from exports) */
+  --color-sky-bg: #afcefa;
+  --color-sky-dot: #a2cbff;
+  --color-sky-dot-active: #71b1fe;
+  --color-sky-panel: #cee4ff;
+  --color-sky-tab: #5b9bd7;
+  --color-blue-heading: #3470ab;
+  --color-gold: #f9cf5a;
+
   /* Semantic roles */
   --color-bg: var(--color-white);
   --color-surface: var(--color-cyan);
@@ -21,7 +30,8 @@
   --color-heading: #326fab;
 
   /* Typography */
-  --font-brand: 'Montserrat', var(--font-sans);
+  --font-heading: 'Montserrat', system-ui, sans-serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
   --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --text-sm: 0.875rem;
