@@ -5,6 +5,6 @@
 }
 
 .hero__title {
+  color: var(--color-heading);
   font-size: var(--text-2xl);
-  color: var(--color-primary);
 }

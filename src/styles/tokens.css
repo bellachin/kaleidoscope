@@ -18,8 +18,10 @@
   --color-accent: var(--color-teal);
   --color-accent-soft: var(--color-light-teal);
   --color-focus: var(--color-deep-teal);
+  --color-heading: #326fab;
 
   /* Typography */
+  --font-brand: 'Montserrat', var(--font-sans);
   --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --text-sm: 0.875rem;
