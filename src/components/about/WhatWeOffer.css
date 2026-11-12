@@ -1,0 +1,99 @@
+.offer {
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  background: var(--color-sky-bg);
+  font-family: var(--font-heading);
+}
+
+.offer__inner {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 7vw, 5rem);
+}
+
+.offer__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.offer__heading {
+  margin: 0 0 var(--space-4);
+  color: var(--color-heading);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 700;
+}
+
+/* Gold underline accent from the design */
+.offer__mark {
+  position: relative;
+  display: inline-block;
+}
+
+.offer__mark::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.08em;
+  height: 0.14em;
+  border-radius: 50% / 100%;
+  background: var(--color-gold);
+  rotate: -1.5deg;
+}
+
+.offer__description {
+  margin: 0 0 var(--space-8);
+  max-width: 32rem;
+  color: var(--color-ink);
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.offer__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.offer__photo--placeholder {
+  background: color-mix(in oklab, var(--color-heading) 30%, var(--color-sky-bg));
+}
+
+.offer__icons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-items: center;
+  gap: var(--space-4);
+}
+
+.offer__icon {
+  display: block;
+  width: clamp(2rem, 5vw, 3rem);
+  height: auto;
+  color: var(--color-heading);
+}
+
+.offer__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 760px) {
+  .offer__top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
