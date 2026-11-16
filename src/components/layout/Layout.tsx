@@ -3,8 +3,8 @@ import Header from './Header';
 import Footer from './Footer';
 
 const primaryNavItems = [
-  { label: 'Home', href: '#hero' },
-  { label: 'About Us', href: '#about' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
   { label: 'Calendar', href: '#calendar' },
   { label: 'Contact Us', href: '#contact' },
 ];
