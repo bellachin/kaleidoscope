@@ -1,12 +1,8 @@
-import hex1 from '@/assets/events/hex-watermark-1.png';
-import hex2 from '@/assets/events/hex-watermark-2.png';
-import hex3 from '@/assets/events/hex-watermark-3.png';
 import AboutHero from '@/components/about/AboutHero';
 import WhatIsKaleidoscope from '@/components/about/WhatIsKaleidoscope';
 import OurMission from '@/components/about/OurMission';
 import MeetOurTeam from '@/components/about/MeetOurTeam';
 import TeamDescriptions from '@/components/about/TeamDescriptions';
-import './AboutPage.css';
 
 // Placeholder content. Replace with Sanity query results.
 const hero = {
@@ -67,20 +63,8 @@ export default function AboutPage() {
     <main className="about-page">
       <AboutHero {...hero} />
 
-      <div className="about-page__decorated">
-        <WhatIsKaleidoscope {...about} />
-        <div className="about-page__decor" aria-hidden="true">
-          <img className="about-page__hex about-page__hex--what-left" src={hex3} alt="" />
-          <img className="about-page__hex about-page__hex--what-right" src={hex2} alt="" />
-        </div>
-      </div>
-
-      <div className="about-page__decorated">
-        <OurMission {...mission} />
-        <div className="about-page__decor" aria-hidden="true">
-          <img className="about-page__hex about-page__hex--mission" src={hex1} alt="" />
-        </div>
-      </div>
+      <WhatIsKaleidoscope {...about} />
+      <OurMission {...mission} />
 
       <MeetOurTeam {...team} />
       <TeamDescriptions {...teams} />

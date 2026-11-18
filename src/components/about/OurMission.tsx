@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import logo from '@/assets/kaleidoscope-logo.svg';
 import './OurMission.css';
 
@@ -7,6 +8,9 @@ type OurMissionProps = {
 };
 
 type OrbitDot = { cx: number; cy: number; tone: string };
+
+// Dots sit on one of two rings around (200, 190); inner dots are ~107 from the center.
+const isInner = (dot: OrbitDot) => Math.hypot(dot.cx - 200, dot.cy - 190) < 140;
 
 // Positions are in the SVG's 400 x 380 coordinate space, measured from the Figma frame.
 const ORBIT_DOTS: OrbitDot[] = [
@@ -22,10 +26,50 @@ const ORBIT_DOTS: OrbitDot[] = [
 ];
 
 export default function OurMission({ heading, body }: OurMissionProps) {
+  const orbitRef = useRef<SVGSVGElement>(null);
+
+  // Rotate the rings with scroll: --orbit-progress goes 0 -> 1 as the graphic crosses the viewport.
+  useEffect(() => {
+    const svg = orbitRef.current;
+    if (!svg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const rect = svg.getBoundingClientRect();
+      const raw = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      svg.style.setProperty('--orbit-progress', String(Math.min(1, Math.max(0, raw))));
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  const renderDots = (inner: boolean) =>
+    ORBIT_DOTS.filter((dot) => isInner(dot) === inner).map((dot) => (
+      <circle
+        key={`${dot.cx}-${dot.cy}`}
+        className={`mission__dot mission__dot--${dot.tone}`}
+        cx={dot.cx}
+        cy={dot.cy}
+        r="20"
+      />
+    ));
+
   return (
     <section id="mission" className="mission" aria-labelledby="mission-heading">
       <div className="mission__inner">
         <svg
+          ref={orbitRef}
           className="mission__orbit"
           viewBox="0 0 400 380"
           aria-hidden="true"
@@ -41,15 +85,8 @@ export default function OurMission({ heading, body }: OurMissionProps) {
             height="84"
             preserveAspectRatio="xMidYMid meet"
           />
-          {ORBIT_DOTS.map((dot) => (
-            <circle
-              key={`${dot.cx}-${dot.cy}`}
-              className={`mission__dot mission__dot--${dot.tone}`}
-              cx={dot.cx}
-              cy={dot.cy}
-              r="20"
-            />
-          ))}
+          <g className="mission__spin mission__spin--outer">{renderDots(false)}</g>
+          <g className="mission__spin mission__spin--inner">{renderDots(true)}</g>
         </svg>
 
         <div className="mission__copy">

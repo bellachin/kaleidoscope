@@ -6,7 +6,7 @@ const primaryNavItems = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Calendar', href: '#calendar' },
-  { label: 'Contact Us', href: '#contact' },
+  { label: 'Resources', href: '/resources' },
 ];
 
 export default function Layout() {
