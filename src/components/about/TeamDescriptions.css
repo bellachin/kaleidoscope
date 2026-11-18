@@ -1,0 +1,86 @@
+.teams {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 4.2vw, 5rem) 0 clamp(3rem, 7vw, 8rem);
+  background: var(--color-white);
+  font-family: var(--font-heading);
+}
+
+.teams__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.teams__heading {
+  margin: 0 0 clamp(2rem, 8vw, 6rem);
+  color: var(--color-heading);
+  font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.teams__grid {
+  margin: 0;
+  padding: 0 0 0 8%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2.5rem, 10vw, 8rem) var(--space-8);
+}
+
+.teams__name {
+  margin: 0 0 var(--space-3);
+  color: var(--color-heading);
+  font-size: clamp(1.75rem, 3.6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.teams__description {
+  margin: 0;
+  max-width: 28rem;
+  color: #000;
+  font-size: clamp(1rem, 1.8vw, 1.375rem);
+  line-height: 1.4;
+}
+
+/* Bold hex icon with its lighter watermark up and to the right (Figma: bottom-right cell) */
+.teams__corner {
+  position: absolute;
+  right: 12.4%;
+  bottom: 1.3vw;
+  width: clamp(72px, 16vw, 300px);
+  pointer-events: none;
+}
+
+.teams__hex,
+.teams__icon {
+  display: block;
+  height: auto;
+}
+
+.teams__hex {
+  position: absolute;
+  top: -50%;
+  left: 53%;
+  width: 120%;
+}
+
+.teams__icon {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .teams {
+    /* reserve room under the list for the corner icon */
+    padding-bottom: calc(clamp(72px, 16vw, 300px) + var(--space-12));
+  }
+
+  .teams__grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 0;
+  }
+}

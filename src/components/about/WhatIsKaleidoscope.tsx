@@ -4,8 +4,9 @@ import './WhatIsKaleidoscope.css';
 type WhatIsKaleidoscopeProps = {
   heading: string;
   body: string;
-  ctaLabel: string;
-  ctaHref: string;
+  /** The button renders only when both label and href are provided. */
+  ctaLabel?: string;
+  ctaHref?: string;
 };
 
 export default function WhatIsKaleidoscope({
@@ -21,7 +22,7 @@ export default function WhatIsKaleidoscope({
           {heading}
         </h2>
         <p className="about__body">{body}</p>
-        <CtaLink href={ctaHref}>{ctaLabel}</CtaLink>
+        {ctaLabel && ctaHref && <CtaLink href={ctaHref}>{ctaLabel}</CtaLink>}
       </div>
     </section>
   );

@@ -1,0 +1,69 @@
+.team {
+  padding: clamp(2.5rem, 5.7vw, 6rem) 0 clamp(3rem, 10.8vw, 10rem);
+  background: var(--color-sky-bg);
+  font-family: var(--font-heading);
+}
+
+.team__inner {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.team__heading {
+  margin: 0 0 clamp(2rem, 7vw, 5rem);
+  color: var(--color-heading);
+  font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.team__grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: clamp(2.5rem, 8vw, 7rem);
+}
+
+.team__member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team__photo {
+  display: block;
+  width: clamp(7rem, 18.4vw, 15rem);
+  aspect-ratio: 1;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team__photo--placeholder {
+  background: var(--color-white);
+}
+
+/* Navy on --color-sky-bg is ~5.4:1 (WCAG AA). Figma's white labels were ~1.6:1. */
+.team__name,
+.team__role {
+  margin: 0;
+  color: var(--color-navy);
+  font-size: clamp(1rem, 1.75vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.team__name + .team__role {
+  margin-top: var(--space-1);
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-4);
+  }
+}

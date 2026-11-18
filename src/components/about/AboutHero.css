@@ -1,0 +1,106 @@
+/*
+ * Positions are percentages of the Figma hero frame (956 x 350 below the header).
+ * The PNGs have 10-40% transparent padding, so widths are larger than the visible shapes.
+ */
+.about-hero {
+  position: relative;
+  z-index: 1; /* keeps the bottom-right hex pair above the next section */
+  overflow-x: clip; /* clip side overflow, but let the corner pair hang off the bottom */
+  min-height: clamp(20rem, 36.6vw, 44rem);
+  background: var(--color-sky-bg);
+  font-family: var(--font-heading);
+}
+
+.about-hero__decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.about-hero__wave {
+  position: absolute;
+  left: 0;
+  top: 26%;
+  width: 112%;
+  height: 62%;
+  object-fit: fill;
+  opacity: 0.75;
+}
+
+.about-hero__hex,
+.about-hero__icon {
+  position: absolute;
+  display: block;
+  height: auto;
+}
+
+.about-hero__hex--top {
+  top: -10.6%;
+  left: 34.5%;
+  width: clamp(150px, 23vw, 440px);
+}
+
+.about-hero__hex--left {
+  top: 1.5%;
+  left: -1%;
+  width: clamp(100px, 19.7vw, 380px);
+}
+
+.about-hero__icon--left {
+  top: 58%;
+  left: 19.5%;
+  width: clamp(40px, 8.9vw, 170px);
+}
+
+.about-hero__corner {
+  position: absolute;
+  right: 1.8%;
+  bottom: 0;
+  width: clamp(56px, 11.2vw, 215px);
+  transform: translateY(68%);
+}
+
+.about-hero__corner .about-hero__icon {
+  position: relative;
+  width: 100%;
+}
+
+.about-hero__hex--corner {
+  top: -128%;
+  left: -86%;
+  width: 271%;
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(48rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: clamp(3rem, 7.3vw, 9rem) 0 clamp(3rem, 6vw, 7rem);
+  text-align: center;
+}
+
+.about-hero__heading {
+  margin: 0 0 var(--space-4);
+  color: var(--color-heading);
+  font-size: clamp(2.25rem, 3.8vw, 4.5rem);
+  font-weight: 700;
+}
+
+.about-hero__subtitle {
+  max-width: 21em;
+  margin: 0 auto;
+  color: #000;
+  font-size: clamp(1.0625rem, 1.8vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+@media (max-width: 640px) {
+  /* Move the lower-left icon below the text so it never sits on the subtitle */
+  .about-hero__icon--left {
+    top: auto;
+    bottom: 10%;
+    left: 8%;
+  }
+}
