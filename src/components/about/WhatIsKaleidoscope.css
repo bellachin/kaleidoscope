@@ -1,35 +1,36 @@
 .about {
   position: relative;
   overflow: hidden;
-  padding: clamp(3rem, 8vw, 6rem) 0;
+  padding: clamp(5rem, 10vw, 9rem) 0 clamp(6rem, 14vw, 12rem);
   background: var(--color-white);
   font-family: var(--font-heading);
 }
 
-/* Faint decorative hexagons (purely visual) */
 .about::before,
 .about::after {
   content: '';
   position: absolute;
   z-index: 0;
-  aspect-ratio: 1;
-  background: color-mix(in oklab, var(--color-sky-bg) 28%, white);
-  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+  background: url('@/assets/events/hex-watermark-3.png') center / contain no-repeat;
   pointer-events: none;
 }
 
+/* Left watermark: 386.03 × 373.02 in Figma */
 .about::before {
-  width: clamp(7rem, 20vw, 15rem);
-  left: -3%;
-  top: 18%;
-  rotate: -15deg;
+  width: min(386px, 26.8vw);   /* 386 / 1440 */
+  aspect-ratio: 386 / 373;
+  left: 10%;
+  bottom: 4%;
+  rotate: -10deg;
 }
 
+/* Right watermark: ~257 wide in Figma */
 .about::after {
-  width: clamp(6rem, 15vw, 11rem);
-  left: 62%;
-  top: -6%;
-  rotate: 20deg;
+  width: min(257px, 17.8vw);   /* 257 / 1440 */
+  aspect-ratio: 1;
+  left: 65%;
+  top: 20%;
+  rotate: 15deg;
 }
 
 .about__inner {

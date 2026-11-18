@@ -1,30 +1,31 @@
 .network {
-  padding: clamp(3rem, 8vw, 9rem) 0;
+  padding: clamp(3rem, 8vw, 6rem) 0; /* same as What We Offer */
   background: var(--color-white);
   font-family: var(--font-heading);
 }
 
 .network__inner {
-  width: calc(100% - 2 * clamp(1.25rem, 10vw, 12rem));
+  width: min(1180px, calc(100% - 2.5rem));
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(1.5rem, 3vw, 4rem);
+  gap: clamp(2.5rem, 7vw, 5rem);
 }
 
 .network__heading {
   margin: 0;
   color: var(--color-heading);
-  font-size: clamp(2rem, 3.75vw, 4.5rem);
+  font-size: clamp(2rem, 3.6vw, 3rem);
   font-weight: 700;
   text-align: center;
 }
 
 .network__diagram {
   display: block;
-  width: min(100%, 62rem);
+  width: min(100%, 36rem);
   height: auto;
+  overflow: visible;
 }
 
 .network__ring {
@@ -32,14 +33,35 @@
   stroke: var(--color-sky-dot-active);
   stroke-width: 1.25;
   stroke-dasharray: 6 6;
-  opacity: 0.8;
+  opacity: 0.55;
+  transition: opacity 0.2s;
   vector-effect: non-scaling-stroke;
 }
 
-.network__node {
-  fill: var(--color-white);
-  stroke: color-mix(in oklab, var(--color-sky-dot-active) 60%, white);
-  stroke-width: 1;
+/* Nodes pop in (staggered) the first time the diagram scrolls into view */
+.network__pop {
+  opacity: 0;
+  transform: scale(0.2);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.network__diagram.is-visible .network__pop {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.network__label {
+  fill: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--color-white);
+  stroke-width: 4px;
+  opacity: calc(var(--pull, 0) * 1.6 - 0.4);
+  pointer-events: none;
 }
 
 .network__initial {

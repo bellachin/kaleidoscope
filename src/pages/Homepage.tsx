@@ -1,3 +1,10 @@
+import c4cLogo from '@/assets/clubs/c4c.svg';
+import disruptLogo from '@/assets/clubs/disrupt.svg';
+import eclubLogo from '@/assets/clubs/eclub.svg';
+import generateLogo from '@/assets/clubs/generate.svg';
+import sandboxLogo from '@/assets/clubs/sandbox.svg';
+import scoutLogo from '@/assets/clubs/scout.svg';
+import wiseLogo from '@/assets/clubs/wise.svg';
 import UpcomingEvents from '@/components/events/UpcomingEvents';
 import WhatIsKaleidoscope from '@/components/about/WhatIsKaleidoscope';
 import OurMission from '@/components/about/OurMission';
@@ -53,17 +60,17 @@ const offer = {
   ],
 } as const;
 
-// Placeholder clubs. Add `logoSrc` (imported from src/assets) to show a club's logo.
+// Club names are inferred from the logo file names; correct them as needed.
 const network = {
   heading: 'Our Club Network',
   clubs: [
-    { id: 'alpha', name: 'Alpha Club' },
-    { id: 'beta', name: 'Beta Club' },
-    { id: 'gamma', name: 'Gamma Club' },
-    { id: 'delta', name: 'Delta Club' },
-    { id: 'epsilon', name: 'Epsilon Club' },
-    { id: 'zeta', name: 'Zeta Club' },
-    { id: 'eta', name: 'Eta Club' },
+    { id: 'c4c', name: 'C4C', logoSrc: c4cLogo },
+    { id: 'disrupt', name: 'Disrupt', logoSrc: disruptLogo },
+    { id: 'eclub', name: 'E-Club', logoSrc: eclubLogo },
+    { id: 'generate', name: 'Generate', logoSrc: generateLogo },
+    { id: 'sandbox', name: 'Sandbox', logoSrc: sandboxLogo },
+    { id: 'scout', name: 'Scout', logoSrc: scoutLogo },
+    { id: 'wise', name: 'WISE', logoSrc: wiseLogo },
   ],
 } as const;
 

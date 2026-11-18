@@ -7,9 +7,10 @@
 }
 
 .header__inner {
-  width: min(1180px, calc(100% - 2.5rem));
+  /* wider than the page content so the brand sits left and the nav sits right */
+  width: min(2400px, calc(100% - 2 * clamp(1.25rem, 3vw, 4rem)));
   margin: 0 auto;
-  padding: clamp(1rem, 2.2vw, 1.7rem) 0;
+  padding: clamp(0.75rem, 1.4vw, 1.25rem) 0; /* scales with the viewport */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,7 +65,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: clamp(0.8rem, 1.6vw, 1.8rem);
+  gap: clamp(1rem, 2.4vw, 2.5rem);
 }
 
 .header__nav-link {
@@ -73,16 +74,17 @@
   font-family: var(--font-brand);
   text-decoration: none;
   color: color-mix(in oklab, var(--color-navy) 90%, black);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
   font-weight: 400;
   line-height: 1.2;
+  white-space: nowrap;
   transition: color 180ms ease;
 }
 
 .header__nav-link::after {
   content: '\2304';
   font-size: 0.8em;
-  margin-left: 0.55rem;
+  margin-left: 0.4em;
   transform: translateY(-0.02em);
 }
 

@@ -2,6 +2,7 @@
  * Positions are percentages of the Figma hero frame (956 x 350 below the header).
  * The PNGs have 10-40% transparent padding, so widths are larger than the visible shapes.
  */
+
 .about-hero {
   position: relative;
   z-index: 1; /* keeps the bottom-right hex pair above the next section */

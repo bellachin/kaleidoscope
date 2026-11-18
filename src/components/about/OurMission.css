@@ -1,9 +1,21 @@
 .mission {
-  padding: clamp(2.5rem, 7vw, 6rem) 0;
-  background: var(--color-white);
-  font-family: var(--font-heading);
+  position: relative;
+  overflow: hidden;   /* crops the watermark at the section edge */
+  padding: clamp(5rem, 10vw, 9rem) 0 clamp(6rem, 14vw, 12rem);
 }
 
+.mission::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  background: url('@/assets/events/hex-watermark-3.png') center / contain no-repeat;
+  aspect-ratio: 1;
+  width: min(224px, 15.5vw);   /* estimated from your first screenshot */
+  right: 3%;
+  bottom: 4%;
+  rotate: 15deg;
+  pointer-events: none;
+}
 .mission__inner {
   width: min(1180px, calc(100% - 2.5rem));
   margin: 0 auto;
@@ -18,6 +30,27 @@
   width: min(100%, 28rem);
   height: auto;
   justify-self: center;
+}
+
+.mission__orbit {
+  --orbit-progress: 0;
+  /* Rotating dots swing outside the 400 x 380 viewBox, so don't clip them */
+  overflow: visible;
+}
+
+/* Rings counter-rotate as the page scrolls */
+.mission__spin {
+  transform-box: view-box;
+  transform-origin: 200px 190px;
+  will-change: transform;
+}
+
+.mission__spin--outer {
+  transform: rotate(calc(var(--orbit-progress) * 120deg));
+}
+
+.mission__spin--inner {
+  transform: rotate(calc(var(--orbit-progress) * -180deg));
 }
 
 .mission__ring {
