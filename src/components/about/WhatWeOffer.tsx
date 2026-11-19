@@ -7,6 +7,7 @@ type OfferIconId = 'funding' | 'community' | 'promotion' | 'resources';
 type OfferItem = {
   id: OfferIconId;
   label: string;
+  description: string;
 };
 
 type WhatWeOfferProps = {
@@ -107,7 +108,8 @@ export default function WhatWeOffer({
               >
                 {ICONS[item.id]}
               </svg>
-              <span className="offer__sr-only">{item.label}</span>
+              <h3 className="offer__item-label">{item.label}</h3>
+              <p className="offer__item-description">{item.description}</p>
             </li>
           ))}
         </ul>
