@@ -12,7 +12,6 @@ import WhatWeOffer from '@/components/about/WhatWeOffer';
 import ClubNetwork from '@/components/clubs/ClubNetwork';
 import ClubForms from '@/components/clubs/ClubForms';
 // import PastEvents from '@/components/clubs/PastEvents';
-import FeaturedBand from '@/components/ui/FeaturedBand';
 // TODO: add the photo to src/assets and import it, e.g.
 // import offerPhoto from '@/assets/offer-photo.jpg';
 
@@ -80,18 +79,20 @@ const forms = {
   intro: 'Everything your club needs to request funding, get recognized and stay up to date.',
   forms: [
     {
-      id: 'club-update',
-      title: 'Club Update Form',
-      headline: 'Keep your info current',
-      summary: 'Helps us showcase your club to Khoury faculty and update the annual club appendix.',
+      id: 'club-recognition',
+      title: 'Club Recognition',
+      headline: 'Make your club part of Kaleidoscope',
+      summary:
+        'Complete this form to have your club recognized and included in the Kaleidoscope community, with access to shared resources and support.',
       items: [
-        'Existing clubs: submit the required (*) fields',
-        'New clubs: fill out all fields',
-        'Submit before current leadership graduates',
-        'View last year’s slides as an example',
+        'Your club must complete this form before the start of each academic year',
+        'Share your club’s current leadership and information',
+        'Recognition provides access to Kaleidoscope resources',
+        'Recognized clubs can apply for annual funding',
       ],
-      ctaLabel: 'Fill out form',
-      ctaHref: 'https://khoury-kaleidoscope.notion.site/347de33cc3a2817d9139ebd93665cf10?pvs=105',
+      ctaLabel: 'Responses have closed',
+      ctaHref: 'https://khoury-kaleidoscope.notion.site/325de33cc3a280af99e3edf4dc1db69e?pvs=105', // Add the next application link here.
+      ctaDisabled: true,
     },
     {
       id: 'events-request',
@@ -122,9 +123,9 @@ const forms = {
         'Board members can attend on behalf of the club',
         'Decisions consider participation, collaborative events and community impact',
       ],
-      ctaLabel: 'Fill out form',
-      ctaHref:
-        'https://docs.google.com/forms/d/e/1FAIpQLSeUctLSq2kod79nPx_m5i7oQGUX6raO9MaQ7MZSN0AIKg80HA/viewform?usp=header',
+      ctaLabel: 'Responses have closed',
+      ctaHref: '', // Add the next application link here.
+      ctaDisabled: true,
     },
   ],
 } as const;
@@ -147,7 +148,6 @@ export default function Homepage() {
       <OurMission {...mission} />
       <WhatWeOffer {...offer} />
       <ClubNetwork {...network} />
-      <FeaturedBand />
       <ClubForms {...forms} />
       {/* <PastEvents {...past} />  */}
     </main>

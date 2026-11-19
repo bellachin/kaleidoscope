@@ -77,15 +77,15 @@
   flex-direction: column;
   gap: clamp(0.5rem, 0.9vw, 1.125rem);
   padding: clamp(1.25rem, 2.2vw, 2.75rem);
-  border: 1px solid color-mix(in oklab, var(--color-gold) 35%, white);
+  border: 1px solid var(--color-heading);
   border-radius: var(--radius-sm);
   background: var(--color-white);
-  color: var(--color-ink);
+  color: var(--color-text);
 }
 
 .forms__card--featured {
   padding-block: clamp(1.75rem, 3.4vw, 4rem);
-  border-color: transparent;
+  border-color: var(--color-heading);
   background: var(--color-sky-bg);
   box-shadow: 0 1rem 2rem -1rem color-mix(in oklab, var(--color-heading) 35%, transparent);
 }
@@ -93,7 +93,7 @@
 .forms__card-title {
   margin: 0;
   color: inherit;
-  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-size: clamp(1.125rem, 1.5vw, 1.75rem);
   font-weight: 600;
 }
 
@@ -103,7 +103,7 @@
 
 .forms__card-headline {
   margin: 0;
-  font-size: clamp(1.25rem, 1.9vw, 2.25rem);
+  font-size: clamp(1.5rem, 2.2vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -114,7 +114,7 @@
 
 .forms__card-summary {
   margin: 0;
-  font-size: clamp(0.9375rem, 0.95vw, 1.125rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 400;
 }
 
@@ -130,7 +130,7 @@
   display: flex;
   align-items: flex-start; /* items can wrap to several lines */
   gap: 0.625rem;
-  font-size: clamp(0.9375rem, 0.95vw, 1.125rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 400;
 }
 
@@ -148,11 +148,12 @@
   align-self: flex-start;
   margin-top: clamp(0.5rem, 1vw, 1.25rem);
   padding: 0.6em 1.2em;
-  border: 1px solid color-mix(in oklab, var(--color-gold) 55%, white);
+  border: 2px solid color-mix(in oklab, var(--color-heading) 55%, white);
   border-radius: var(--radius-sm);
   background: var(--color-white);
-  color: var(--color-ink);
-  font-size: clamp(0.9375rem, 0.95vw, 1.125rem);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1vw, 1.2rem);
   font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
@@ -161,6 +162,13 @@
 
 .forms__cta:hover {
   background: color-mix(in oklab, var(--color-gold) 18%, white);
+}
+
+.forms__cta--disabled {
+  border-color: color-mix(in oklab, var(--color-text) 20%, white);
+  background: color-mix(in oklab, var(--color-text) 8%, white);
+  color: color-mix(in oklab, var(--color-text) 58%, white);
+  cursor: not-allowed;
 }
 
 .forms__card--featured .forms__cta {
