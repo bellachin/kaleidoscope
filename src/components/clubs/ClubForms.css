@@ -128,7 +128,7 @@
 
 .forms__check-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* items can wrap to several lines */
   gap: 0.625rem;
   font-size: clamp(0.9375rem, 0.95vw, 1.125rem);
   font-weight: 400;

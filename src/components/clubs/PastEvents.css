@@ -1,4 +1,9 @@
-.past {
+/* 
+  Past Events section
+  -------------------
+  This section is currently commented out in the Homepage.tsx file, as we don't have any content to display yet.
+  The CSS is also commented out here, but can be uncommented when the section is ready to be used.
+/* .past {
   padding: 0 0 clamp(3rem, 8vw, 9rem);
   background: var(--color-white);
   font-family: var(--font-heading);
@@ -42,7 +47,7 @@
 }
 
 /* The middle card is taller, as in the design */
-.past__card--sky {
+/* .past__card--sky {
   min-height: clamp(12rem, 18.5vw, 22rem);
   background: var(--color-sky-bg);
   box-shadow: none;
@@ -99,4 +104,4 @@
   .past__card--sky {
     min-height: 0;
   }
-}
+}  */

@@ -1,43 +1,48 @@
-import MarkedText from '@/components/ui/MarkedText';
-import './PastEvents.css';
+// Past Events section
+// -------------------
+// This section is currently commented out in the Homepage.tsx file, as we don't have any content to display yet.
+// The component is also commented out here, but can be uncommented when the section is ready to be used.
 
-type Story = {
-  id: string;
-  quote: string;
-  author: string;
-  tone: 'white' | 'sky' | 'blue';
-};
+// import MarkedText from '@/components/ui/MarkedText';
+// import './PastEvents.css';
 
-type PastEventsProps = {
-  heading: string;
-  highlight?: string;
-  stories: readonly Story[];
-};
+// type Story = {
+//   id: string;
+//   quote: string;
+//   author: string;
+//   tone: 'white' | 'sky' | 'blue';
+// };
 
-export default function PastEvents({ heading, highlight, stories }: PastEventsProps) {
-  return (
-    <section id="past-events" className="past" aria-labelledby="past-heading">
-      <div className="past__inner">
-        <h2 id="past-heading" className="past__heading">
-          <MarkedText text={heading} highlight={highlight} />
-        </h2>
+// type PastEventsProps = {
+//   heading: string;
+//   highlight?: string;
+//   stories: readonly Story[];
+// };
 
-        <ul className="past__grid">
-          {stories.map((story) => (
-            <li key={story.id} className={`past__card past__card--${story.tone}`}>
-              <figure className="past__figure">
-                <span className="past__quote-mark" aria-hidden="true">
-                  “
-                </span>
-                <blockquote className="past__quote">
-                  <p>{story.quote}</p>
-                </blockquote>
-                <figcaption className="past__author">{story.author}</figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
+// export default function PastEvents({ heading, highlight, stories }: PastEventsProps) {
+//   return (
+//     <section id="past-events" className="past" aria-labelledby="past-heading">
+//       <div className="past__inner">
+//         <h2 id="past-heading" className="past__heading">
+//           <MarkedText text={heading} highlight={highlight} />
+//         </h2>
+
+//         <ul className="past__grid">
+//           {stories.map((story) => (
+//             <li key={story.id} className={`past__card past__card--${story.tone}`}>
+//               <figure className="past__figure">
+//                 <span className="past__quote-mark" aria-hidden="true">
+//                   “
+//                 </span>
+//                 <blockquote className="past__quote">
+//                   <p>{story.quote}</p>
+//                 </blockquote>
+//                 <figcaption className="past__author">{story.author}</figcaption>
+//               </figure>
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+//     </section>
+//   );
+// }

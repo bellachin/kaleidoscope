@@ -63,7 +63,13 @@ export default function ClubForms({ heading, highlight, intro, forms }: ClubForm
                 ))}
               </ul>
 
-              <a className="forms__cta" href={form.ctaHref}>
+              <a
+                className="forms__cta"
+                href={form.ctaHref}
+                {...(form.ctaHref.startsWith('http')
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+              >
                 {form.ctaLabel}
               </a>
             </li>
