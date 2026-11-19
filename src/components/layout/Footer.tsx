@@ -1,3 +1,4 @@
+import type { FormEvent } from 'react';
 import logo from '@/assets/kaleidoscope-logo.svg';
 import './Footer.css';
 
@@ -6,6 +7,21 @@ const resourceLinks = ['Overview', 'Our Mission', 'Club Events'];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const handleSignupSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get('email');
+
+    if (typeof email !== 'string' || email.length === 0) {
+      return;
+    }
+
+    const subject = encodeURIComponent('Kaleidoscope mailing list signup');
+    const body = encodeURIComponent(`Please add ${email} to the Kaleidoscope mailing list.`);
+    window.location.href = `mailto:kaleidoscope@northeastern.edu?subject=${subject}&body=${body}`;
+  };
 
   return (
     <footer className="footer">
@@ -22,16 +38,18 @@ export default function Footer() {
               Add your club&apos;s email to be informed on all upcoming events and details!
             </p>
 
-            <form className="footer__form" onSubmit={(event) => event.preventDefault()}>
+            <form className="footer__form" onSubmit={handleSignupSubmit}>
               <label htmlFor="footer-email" className="footer__sr-only">
                 Email Address
               </label>
               <input
                 id="footer-email"
+                name="email"
                 type="email"
                 className="footer__input"
                 placeholder="Email Address"
                 autoComplete="email"
+                required
               />
               <button type="submit" className="footer__button">
                 Join <span aria-hidden="true">&rarr;</span>

@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;   /* crops the watermark at the section edge */
   padding: clamp(5rem, 10vw, 9rem) 0 clamp(6rem, 14vw, 12rem);
+  font-family: var(--font-heading);
 }
 
 .mission::after {

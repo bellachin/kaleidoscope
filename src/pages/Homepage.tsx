@@ -5,6 +5,7 @@ import generateLogo from '@/assets/clubs/generate.svg';
 import sandboxLogo from '@/assets/clubs/sandbox.svg';
 import scoutLogo from '@/assets/clubs/scout.svg';
 import wiseLogo from '@/assets/clubs/wise.svg';
+import offerPhoto from '@/assets/what_we_offer.svg';
 import UpcomingEvents from '@/components/events/UpcomingEvents';
 import WhatIsKaleidoscope from '@/components/about/WhatIsKaleidoscope';
 import OurMission from '@/components/about/OurMission';
@@ -47,15 +48,39 @@ const mission = {
 const offer = {
   heading: 'What We Offer',
   highlight: 'We',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  ctaLabel: 'Let’s Go',
-  ctaHref: '#',
-  // image: { src: offerPhoto, alt: 'Students visiting club tables at an outdoor campus event' },
+  description:
+    'From funding and technical resources to campus-wide connections, Kaleidoscope helps Khoury clubs turn ideas into opportunities. Whether you’re looking to fund your next event, access tools to support your projects, collaborate with other organizations, or connect with industry professionals, we help make those opportunities possible.',
+  ctaLabel: 'Check Out Our Resources',
+  ctaHref: '/resources',
+  image: {
+    src: offerPhoto,
+    alt: 'Students visiting club tables at an outdoor campus event',
+  },
   items: [
-    { id: 'funding', label: 'Funding' },
-    { id: 'community', label: 'Community' },
-    { id: 'promotion', label: 'Promotional support' },
-    { id: 'resources', label: 'Resources' },
+    {
+      id: 'funding',
+      label: 'Funding & Technical Resources',
+      description:
+        'Access funding opportunities, including event support and annual grants, alongside software, computing resources, and other tools that help your club grow and bring projects to life.',
+    },
+    {
+      id: 'community',
+      label: 'Community & Collaboration',
+      description:
+        'Connect with fellow Khoury organizations, meet student leaders, share ideas, and find opportunities to collaborate on events, projects, and initiatives across clubs.',
+    },
+    {
+      id: 'promotion',
+      label: 'Promotion & Visibility',
+      description:
+        "Get your club and its events in front of the Khoury community through promotional opportunities, club spotlights, social media, newsletters, and campus-wide events.",
+    },
+    {
+      id: 'resources',
+      label: 'Industry & Employer Connections',
+      description:
+        "Build relationships beyond campus through employer connections, industry networking, professional events, and opportunities to showcase your club's work to potential partners.",
+    },
   ],
 } as const;
 
