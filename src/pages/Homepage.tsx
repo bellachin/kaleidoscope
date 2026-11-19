@@ -11,8 +11,7 @@ import OurMission from '@/components/about/OurMission';
 import WhatWeOffer from '@/components/about/WhatWeOffer';
 import ClubNetwork from '@/components/clubs/ClubNetwork';
 import ClubForms from '@/components/clubs/ClubForms';
-import PastEvents from '@/components/clubs/PastEvents';
-import FeaturedBand from '@/components/ui/FeaturedBand';
+// import PastEvents from '@/components/clubs/PastEvents';
 // TODO: add the photo to src/assets and import it, e.g.
 // import offerPhoto from '@/assets/offer-photo.jpg';
 
@@ -74,53 +73,72 @@ const network = {
   ],
 } as const;
 
-const formDetails = ['Detail', 'Detail', 'Detail', 'Detail', 'Detail', 'Detail'] as const;
-
 const forms = {
   heading: 'Current Club Forms',
   highlight: 'Forms',
-  intro: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  intro: 'Everything your club needs to request funding, get recognized and stay up to date.',
   forms: [
     {
-      id: 'form-one',
-      title: 'Form Title',
-      headline: 'Headline',
-      summary: 'Short summary',
-      items: formDetails,
-      ctaLabel: 'Fill out form',
-      ctaHref: '#',
+      id: 'club-recognition',
+      title: 'Club Recognition',
+      headline: 'Make your club part of Kaleidoscope',
+      summary:
+        'Complete this form to have your club recognized and included in the Kaleidoscope community, with access to shared resources and support.',
+      items: [
+        'Your club must complete this form before the start of each academic year',
+        'Share your club’s current leadership and information',
+        'Recognition provides access to Kaleidoscope resources',
+        'Recognized clubs can apply for annual funding',
+      ],
+      ctaLabel: 'Responses have closed',
+      ctaHref: 'https://khoury-kaleidoscope.notion.site/325de33cc3a280af99e3edf4dc1db69e?pvs=105', // Add the next application link here.
+      ctaDisabled: true,
     },
     {
       id: 'events-request',
-      title: 'Events Request Form',
+      title: 'Events Fund Request Form',
       headline: 'Up to $7 per person',
-      summary: 'Short summary',
-      items: formDetails,
+      summary: 'Request funding for events that bring the Khoury community together.',
+      items: [
+        'Submit at least 2 weeks before the event (allow 72 hours for review)',
+        'Include an itemized budget and cost per attendee',
+        'Estimate attendance and explain how you will advertise',
+        'Explain the event’s goals; collaborations are encouraged',
+        'Acknowledge Kaleidoscope as a sponsor',
+        'Within 21 days, submit an impact summary, actual expenses and 3–5 pictures',
+      ],
       ctaLabel: 'Fill out form',
-      ctaHref: '#',
+      ctaHref: 'https://khoury-kaleidoscope.notion.site/2f0de33cc3a28154811ade61e308a199?pvs=105',
       featured: true,
     },
     {
       id: 'club-grants',
       title: 'Club Grants',
-      headline: 'Headline',
-      summary: 'Short summary',
-      items: formDetails,
-      ctaLabel: 'Fill out form',
-      ctaHref: '#',
+      headline: '$500 annual grant',
+      summary: 'Every Kaleidoscope-recognized club is eligible for the 2026–2027 academic year.',
+      items: [
+        'Deposited directly into your club’s cash index',
+        'Use the funds at your club’s discretion',
+        'Stay in good standing: join Club Fairs and Club Council meetings',
+        'Board members can attend on behalf of the club',
+        'Decisions consider participation, collaborative events and community impact',
+      ],
+      ctaLabel: 'Responses have closed',
+      ctaHref: '', // Add the next application link here.
+      ctaDisabled: true,
     },
   ],
 } as const;
 
-const past = {
-  heading: 'Past Events',
-  highlight: 'Events',
-  stories: [
-    { id: 'story-one', quote: 'Placeholder quote about the event.', author: 'Student name', tone: 'white' },
-    { id: 'story-two', quote: 'Placeholder quote about the event.', author: 'Student name', tone: 'sky' },
-    { id: 'story-three', quote: 'Placeholder quote about the event.', author: 'Student name', tone: 'blue' },
-  ],
-} as const;
+// const past = {
+//   heading: 'Past Events',
+//   highlight: 'Events',
+//   stories: [
+//     { id: 'story-one', quote: 'Placeholder quote about the event.', author: 'Student name', tone: 'white' },
+//     { id: 'story-two', quote: 'Placeholder quote about the event.', author: 'Student name', tone: 'sky' },
+//     { id: 'story-three', quote: 'Placeholder quote about the event.', author: 'Student name', tone: 'blue' },
+//   ],
+// } as const;
 
 export default function Homepage() {
   return (
@@ -130,9 +148,8 @@ export default function Homepage() {
       <OurMission {...mission} />
       <WhatWeOffer {...offer} />
       <ClubNetwork {...network} />
-      <FeaturedBand />
       <ClubForms {...forms} />
-      <PastEvents {...past} />
+      {/* <PastEvents {...past} />  */}
     </main>
   );
 }

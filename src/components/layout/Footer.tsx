@@ -91,7 +91,13 @@ export default function Footer() {
           </div>
 
           <div className="footer__socials" aria-label="Social links">
-            <a href="#" className="footer__social" aria-label="Slack">
+            <a
+              href="https://khourycommunity.slack.com/archives/C051PN5AGSH"
+              className="footer__social"
+              aria-label="Slack"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" className="footer__icon">
                 <path fill="#36C5F0" d="M10.3 2a2.3 2.3 0 1 1 0 4.6H8V4.3A2.3 2.3 0 0 1 10.3 2Z" />
                 <path fill="#2EB67D" d="M10.3 8h2.3v2.3a2.3 2.3 0 1 1-4.6 0A2.3 2.3 0 0 1 10.3 8Z" />
@@ -103,7 +109,13 @@ export default function Footer() {
                 <path fill="#E01E5A" d="M8 13.7v-2.3h2.3a2.3 2.3 0 1 1 0 4.6A2.3 2.3 0 0 1 8 13.7Z" />
               </svg>
             </a>
-            <a href="#" className="footer__social" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/company/nukhourykaleidoscope/"
+              className="footer__social"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" className="footer__icon">
                 <path
                   d="M6.3 8.2a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44ZM4.8 19.2h3V9.85h-3Zm5.3 0h2.95v-5.04c0-1.33.25-2.62 1.9-2.62 1.62 0 1.64 1.51 1.64 2.7v4.96h2.96v-5.55c0-2.73-.59-4.83-3.77-4.83a3.3 3.3 0 0 0-2.97 1.63h-.04V9.85h-2.67c.03.93 0 9.35 0 9.35Z"
@@ -111,7 +123,13 @@ export default function Footer() {
                 />
               </svg>
             </a>
-            <a href="#" className="footer__social" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/nu.kaleidoscope/"
+              className="footer__social"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" className="footer__icon">
                 <path
                   d="M7.2 3.6h9.6A3.6 3.6 0 0 1 20.4 7.2v9.6a3.6 3.6 0 0 1-3.6 3.6H7.2a3.6 3.6 0 0 1-3.6-3.6V7.2a3.6 3.6 0 0 1 3.6-3.6Zm9.3 1.8H7.5A2.1 2.1 0 0 0 5.4 7.5v9a2.1 2.1 0 0 0 2.1 2.1h9a2.1 2.1 0 0 0 2.1-2.1v-9a2.1 2.1 0 0 0-2.1-2.1ZM12 8.1A3.9 3.9 0 1 1 8.1 12 3.9 3.9 0 0 1 12 8.1Zm0 1.8A2.1 2.1 0 1 0 14.1 12 2.1 2.1 0 0 0 12 9.9Zm4.35-2.67a.9.9 0 1 1-.9.9.9.9 0 0 1 .9-.9Z"

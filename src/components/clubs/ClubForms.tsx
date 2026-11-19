@@ -8,7 +8,8 @@ type FormCard = {
   summary: string;
   items: readonly string[];
   ctaLabel: string;
-  ctaHref: string;
+  ctaHref?: string;
+  ctaDisabled?: boolean;
   /** Highlighted card (blue, taller). */
   featured?: boolean;
 };
@@ -63,9 +64,21 @@ export default function ClubForms({ heading, highlight, intro, forms }: ClubForm
                 ))}
               </ul>
 
-              <a className="forms__cta" href={form.ctaHref}>
-                {form.ctaLabel}
-              </a>
+              {form.ctaDisabled ? (
+                <span className="forms__cta forms__cta--disabled" aria-disabled="true">
+                  {form.ctaLabel}
+                </span>
+              ) : (
+                <a
+                  className="forms__cta"
+                  href={form.ctaHref}
+                  {...(form.ctaHref?.startsWith('http')
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                >
+                  {form.ctaLabel}
+                </a>
+              )}
             </li>
           ))}
         </ul>

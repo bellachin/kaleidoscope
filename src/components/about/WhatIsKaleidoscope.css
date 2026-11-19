@@ -55,6 +55,6 @@
 .about__body {
   margin: 0;
   color: var(--color-ink);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.5;
 }
