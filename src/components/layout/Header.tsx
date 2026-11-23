@@ -16,7 +16,7 @@ type HeaderProps = {
 const defaultNavItems: HeaderNavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'Calendar', href: '#calendar' },
+  { label: 'Calendar', href: '/events' },
   { label: 'Resources', href: '/resources' },
 ];
 

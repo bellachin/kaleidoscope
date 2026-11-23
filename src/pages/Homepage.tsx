@@ -7,6 +7,7 @@ import scoutLogo from '@/assets/clubs/scout.svg';
 import wiseLogo from '@/assets/clubs/wise.svg';
 import offerPhoto from '@/assets/what_we_offer.svg';
 import UpcomingEvents from '@/components/events/UpcomingEvents';
+import { formatWhen, upcomingEvents } from '@/lib/events';
 import WhatIsKaleidoscope from '@/components/about/WhatIsKaleidoscope';
 import OurMission from '@/components/about/OurMission';
 import WhatWeOffer from '@/components/about/WhatWeOffer';
@@ -22,15 +23,16 @@ const upcoming = {
   description:
     'Join us for our next events — open to all undergrads. Discover what Kaleidoscope and Khoury clubs are hosting on campus and find your community!',
   ctaLabel: 'Events Calendar',
-  ctaHref: '#',
+  ctaHref: '/events',
 };
 
-const events = [1, 2, 3, 4, 5, 6].map((n) => ({
-  id: String(n),
-  title: 'Event Title',
-  description: 'Description',
-  dateTime: 'Date / Time',
-  location: 'Location',
+// Next 6 events from src/data/events.json (synced from Notion by `npm run events`).
+const events = upcomingEvents(6).map((e) => ({
+  id: e.id,
+  title: e.title,
+  description: e.description ?? e.calendar,
+  dateTime: formatWhen(e),
+  location: e.location ?? '',
 }));
 
 const about = {

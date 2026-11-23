@@ -1,0 +1,98 @@
+{
+  "generated": null,
+  "sample": true,
+  "semester": { "name": "Fall 2026", "start": "2026-09-01", "end": "2026-12-31" },
+  "events": [
+    {
+      "id": "s1",
+      "title": "Kaleidoscope Kickoff",
+      "start": "2026-09-10",
+      "end": "2026-09-10",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "calendar": "Kaleidoscope Events",
+      "location": "Curry Student Center",
+      "description": "Meet Khoury clubs and the Kaleidoscope team."
+    },
+    {
+      "id": "s2",
+      "title": "Club Leader Roundtable",
+      "start": "2026-10-01",
+      "end": "2026-10-01",
+      "startTime": "17:30",
+      "endTime": "19:00",
+      "calendar": "Kaleidoscope Events",
+      "location": "ISEC 102"
+    },
+    {
+      "id": "s3",
+      "title": "Sandbox - Demo Night",
+      "start": "2026-11-05",
+      "end": "2026-11-05",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "calendar": "Club Events",
+      "location": "West Village H"
+    },
+    {
+      "id": "s4",
+      "title": "C4C & Scout - Design Jam",
+      "start": "2026-11-18",
+      "end": "2026-11-18",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "calendar": "Club Events",
+      "location": "Snell Library"
+    },
+    {
+      "id": "s5",
+      "title": "WISE - Resume Workshop",
+      "start": "2026-11-24",
+      "end": "2026-11-24",
+      "startTime": "18:30",
+      "endTime": "19:30",
+      "calendar": "Club Events",
+      "location": "Richards Hall"
+    },
+    {
+      "id": "s6",
+      "title": "Generate - Project Showcase",
+      "start": "2026-12-02",
+      "end": "2026-12-02",
+      "startTime": "17:00",
+      "endTime": "19:00",
+      "calendar": "Club Events",
+      "location": "EXP 610"
+    },
+    {
+      "id": "s7",
+      "title": "Disrupt - Fintech Panel",
+      "start": "2026-12-03",
+      "end": "2026-12-03",
+      "startTime": "18:00",
+      "endTime": "19:30",
+      "calendar": "Club Events",
+      "location": "ISEC 140"
+    },
+    {
+      "id": "s8",
+      "title": "Hackathon Weekend",
+      "start": "2026-12-05",
+      "end": "2026-12-06",
+      "startTime": "10:00",
+      "endTime": "17:00",
+      "calendar": "Kaleidoscope Events",
+      "location": "Curry Student Center"
+    },
+    {
+      "id": "s9",
+      "title": "End-of-Semester Social",
+      "start": "2026-12-10",
+      "end": "2026-12-10",
+      "startTime": "18:00",
+      "endTime": "21:00",
+      "calendar": "Kaleidoscope Events",
+      "location": "Afterhours"
+    }
+  ]
+}

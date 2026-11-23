@@ -1,0 +1,27 @@
+.events-page {
+  flex: 1;
+  padding: var(--space-12) var(--space-4) var(--space-16);
+}
+
+.events-page__heading,
+.events-page__intro,
+.events-page__meta {
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.events-page__heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.events-page__intro {
+  margin-bottom: var(--space-8);
+}
+
+.events-page__meta {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  opacity: 0.75;
+}
